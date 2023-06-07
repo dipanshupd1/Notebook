@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,'../public')))
 app.set('view engine','hbs')
 
-
+const PORT=process.env.PORT ||3000
 app.get('/',(req,res)=>{
     res.render('login.hbs')
 })
@@ -141,6 +141,6 @@ app.get('/logout',(req,res)=>{
 })
 
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log('listening at port 3000')
 })
