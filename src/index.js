@@ -3,7 +3,8 @@ const hbs = require('hbs');
 const cookieParser=require("cookie-parser")
 const jwt = require('jsonwebtoken');
 const path = require('path');
-require('./db/conn.js')
+// require('./db/conn.js')
+const conn = require('./db/conn.js');
 const dotenv=require('dotenv')
 dotenv.config()
 const User=require('./models/usermodel.js')
@@ -14,7 +15,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,'../public')))
 app.set('view engine','hbs')
-
+conn();
 const PORT=process.env.PORT ||3000
 app.get('/',(req,res)=>{
     res.render('login.hbs')
