@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,wght@1,300&family=Poppins:ital,wght@1,200&family=Roboto+Condensed:wght@300&family=Teko:wght@500&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/note.css">
+</head>
+<body>
+    <nav>
+        <div id="left">Notebook</div>
+        <div id="right">
+            <ul>
+                <li><i class="fa-solid fa-gear"></i></li>
+                <li>{{name}}</li>
+                 <li><abbr title="Logout"><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i></a></abbr></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wnote">
+        <form action="/data" method="POST">
+            <input type="text" name="title" id="title" placeholder="TITLE"><br>
+            <textarea name="text" cols="30" rows="5" id="texta" placeholder="Start writing"></textarea>
+            <input type="hidden" id="hiddeninp" name="hiddeninp" value="{{email}}">
+            <input type="submit" value="submit" id="submitdata">
+        </form>
+        <button id="save"><i class="fa-solid fa-check"></i></button>
+        <form action="/user/del" method="POST">
+        <input type="hidden" name="hiddendel" id="hiddendel">
+        <input type="hidden" name="delemail" id="emailfordel">
+        <input type="submit" name="deldata" id="deldata">
+        </form>
+        
+        {{!-- <form action="">
+                <input type="hidden" id="deltitle" name>
+                <textarea name="deltext" id="" cols="30" rows="10"></textarea>
+            </form> --}}
+
+    </div>
+    <p id="heading">Your Saved Notes</p><hr>
+    <div class="main" id="main">
+
+        {{#each data3}}
+
+        <div class="disnote">
+              <div class="divtitle">{{this.title}}</div>
+        <div class="divtext">{{this.text}}</div>
+        <button class="delete"><i class="fa-solid fa-trash"></i></i></button>
+        <p class="id">{{this._id}}</p>
+        </div>
+        {{/each}}
+
+        {{!-- {{#each data1}}                                                                                                                                                                                                       }}
+        <p>{{this}}</p>
+        {{/each}} --}}
+
+        {{!-- {{data1}} <br><br>
+        {{data2}} <br><br>
+        {{data3}} --}}
+
+        {{!-- {{#each data3}}
+
+           
+            {{this.text}}
+
+        {{/each}} --}}
+
+    </div>
+
+
+    <script src="/js/note.js"></script>
+    
+</body>
+</html>

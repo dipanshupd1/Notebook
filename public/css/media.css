@@ -1,0 +1,54 @@
+@media (max-width:740px){
+    .intro{
+        font-size: 1.4rem;
+    }
+    .intro span{
+        font-size: 3rem;
+    }
+    .divnote{
+        width: 20vw;
+        height: 30vh;
+    }
+    .info{
+        font-size: 0.9rem;
+    }
+    #account{
+        font-size: 2.3rem;
+    }
+    #contactus{
+        font-size: 1.5rem;
+    }
+    #faq{
+        font-size: 2.9rem;
+    }
+}
+
+@media (max-width:450px){
+    .topnav{
+        height: 40vh;
+    }
+    .intro{
+        font-size: 1rem;
+        margin: 3rem 1rem 3rem 1rem;
+       
+    }
+    .intro span{
+        font-size: 2rem;
+    }
+    .divnote{
+        width: 20vw;
+        height: 20vh;
+    }
+    .info{
+        font-size: 0.9rem;
+    }
+    #account{
+        font-size: 2rem;
+    }
+    #contactus{
+        font-size: 1.3rem;
+    }
+    #faq{
+        font-size: 2.7rem;
+    }
+}

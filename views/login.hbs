@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lobster&family=Merriweather:ital,wght@1,300&family=Poppins:ital,wght@1,200&family=Roboto+Condensed:wght@300&family=Teko:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/media.css">
+
+    <title>Document</title>
+</head>
+<body>
+        
+              <div class="topnav">
+              </div>
+              <div class="stickynav">
+                <ul>
+                    <li id="li1">Notepad</li>
+                    <li class="liclass"><a href="#account">Login</a></li>
+                    <li class="liclass"><a href="#contactus">About</a></li>
+                </ul>
+              </div>
+             
+        
+        <div class="main">
+            <div class="middle">
+                <div class="intro">
+                    Presenting <br><span> Notebook</span> <br> A very efficient way for writing and managing notes
+                </div>
+                <div class="divnote"></div>
+            </div>
+            
+            <div class="info">
+                <h2>Why Notebook ?</h2>
+                <p>Notebook is a simple and user-friendly application that allows user to easily store and acces notes. And the best part is that you can easily access the notes from anywhwer and anytime. </p>
+                <p>You just need to create an account and login the the credentials to access the notes</p>
+                <p>So, Register now, and create as many notes as you want for free!!</p>
+            </div>
+            <p id="account">Create An Account OR Login</p>
+            <div class="newform">
+                <div id="formtop">
+                    <div id="btnc"></div>
+                    <button id="log" onclick="btnl()">Login</button>
+                    <button id="reg" onclick="btnr()">Register</button>
+
+                </div>
+                <div id="formcontent">
+                <div id="loginf">
+                    <form action="/login" method="POST">
+                        <label for="emaill">Enter the Email Address</label> <br>
+                        <input type="email" name='emaill' placeholder="user@gmail.com" required class="inputl"><br> <br>
+                        <label for="passwordl">Enter the Password</label><br>
+                        <input type="password" name="passwordl" placeholder="password" required class="inputl"> <br>
+                        <p id="loginerr">{{loginerr}}</p>
+                        <input type="submit" name="submitl" value="Login" id="submitl">
+                    </form>
+                </div>
+                <div id="registerf">
+                    <form action="/register" method="POST">
+                        <label for="namer">Enter Your Name</label><br>
+                        <input type="name" name='namer' placeholder="Name" required class="inputl"><br>
+                        <label for="emailr"></label>Enter Your Email-Id<br>
+                        <input type="email" name='emailr' placeholder="user@gmail.com" required class="inputl"><br>
+                        <label for="passwordr"></label>Create a Password<br>
+                        <input type="password" name='passwordr' placeholder="password" id="pass" required class="inputl"><br>
+                        <label for="cpasswordr"></label>Confirm Password<br>
+                        <input type="password" name='cpasswordr' placeholder="Confirm password" id='cpass'required class="inputl"><br>
+                        <input type="submit" name="submitr" id="submitdata" value="submit">
+                    </form>
+                        <p id="errorpass">*sorry, passwords are not matching!!</p>
+                        <button id="submitr">Register</button>
+                        
+
+                   
+                </div>
+                </div>
+            </div>
+
+            <div id="contactus">
+                <h1>Contact-Us</h1>
+                <div class="icons">
+                    <ul id="iconsym">
+                       <li><a href="https://www.instagram.com/dipanshupd/" id="ins"><i class="fa-brands fa-instagram"></i></a></li>
+                       <li><a href="https://twitter.com/Dipanshupd" id="twi"><i class="fa-brands fa-twitter"></i></a></li>
+                       <li><a href="https://www.linkedin.com/in/dipanshu-prasad-641a18231/" id="lin"><i class="fa-brands fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+
+
+
+
+
+            </div>
+            
+            <h1 id="faq">FAQ'S</h1>
+            <div class="accor">
+                <div class="sep ">
+                    <div class="ques">Is there any subscription fee or charges?<span class="accorspan"><i class="fa-solid fa-square-plus"></i></span></div>
+                    <div class="ans" class="unhide">No, this website is totally free, moreover, customer's satisfaction is our topmost priority thatswhy we don't show any ads either </div>
+                </div>
+                <div class="sep ">
+                    <div class="ques">Can I access my notes from any device <span class="accorspan"><i class="fa-solid fa-square-plus"></i></span></div>
+                    <div class="ans" class="unhide">Yes, you can access your notes from any devices. Only thing you need is your login credentials</div>
+                </div>
+        
+                <div class="sep ">
+                    <div class="ques"> Can I share my notes with my friend <span class="accorspan"><i class="fa-solid fa-square-plus"></i></span> </div>
+                    <div class="ans" class="unhide">Sorry this feature is currently unavailable, but I am working on it</div>
+                </div>
+        
+        
+        
+            </div> 
+
+            <footer>
+                Created by Dipanshu Prasad.
+            </footer>
+            
+        </div>
+
+        <script>
+            const btnid=document.getElementById('btnc')
+            const formr=document.getElementById("registerf")
+            const forml=document.getElementById('loginf')
+            const pass=document.getElementById('pass')
+            const cpass=document.getElementById('cpass')
+            const submitr=document.getElementById('submitr')
+            const submitdata=document.getElementById('submitdata')
+            const errorpass=document.getElementById('errorpass')
+
+
+            const btnr=()=>{
+                btnid.style.left='50%';
+                formr.style.left='0vw'
+                forml.style.left='-100vw'
+
+            }
+            const btnl=()=>{
+                btnid.style.left='0%';
+                formr.style.left='100vw'
+                forml.style.left='0vw'
+            }
+
+            submitr.addEventListener('click',()=>{
+                if(pass.value===cpass.value){
+                    submitdata.click()
+                }
+                else{
+                    errorpass.style.display='block';
+                }
+
+            })
+
+
+            const tog = document.getElementsByClassName('ques')
+        const accorspan=document.getElementsByClassName('accorspan')
+        const ans = document.getElementsByClassName('ans')
+        const sep=document.getElementsByClassName('sep')
+        for (let i = 0; i < tog.length; i++) {
+
+            tog[i].addEventListener('click', (event) => {
+                ans[i].classList.toggle('unhide')   
+                if(ans[i].classList.contains('unhide')){
+                   accorspan[i].innerHTML='<i class=" fa fa-light fa-square-minus"></i>'
+                   sep[i].classList.add('quesbox')
+                }
+
+                else{
+                    accorspan[i].innerHTML='<i class="fa-solid fa-square-plus"></i>'
+                    sep[i].classList.remove('quesbox')
+                }
+
+            })   
+                  
+           
+}
+            
+
+        </script>
+    
+</body>
+</html>
